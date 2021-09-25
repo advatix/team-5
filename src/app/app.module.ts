@@ -11,9 +11,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PipesModule } from './modules/pipes/pipes.module';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { RouterModule } from '@angular/router';
+import { LoaderComponent } from './login/loader/loader.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoaderComponent
   ],
   imports: [
     RouterModule,

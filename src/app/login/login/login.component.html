@@ -1,0 +1,37 @@
+<div class="login-page" style="height: auto; min-height: 100%;">
+    <div class="login-box" style="margin: 0 auto;padding:7% 0;">
+        <div class="login-logo">
+            <span class="logo-lg">
+                <img src="assets/images/logo.jpg" class="logo-lg" style="width: 146px; margin: 5px;" alt="logo-lg">
+            </span>
+        </div>
+        <div class="login-box-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+            <form [formGroup]="loginForm" (ngSubmit)="loginUser();">
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="userName" placeholder="User Name">
+                    <span class="help-block text-danger" *ngIf="loginForm.get('userName').touched && loginForm.get('userName').invalid">
+                        <span *ngIf="loginForm.get('userName').errors.required">Required</span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" formControlName="passwordtype" placeholder="User Name">
+                    <span class="help-block text-danger" *ngIf="loginForm.get('passwordtype').touched && loginForm.get('passwordtype').invalid">
+                        <span *ngIf="loginForm.get('passwordtype').errors.required">Required</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <a routerLink="/forgetPassword">I forgot my password</a>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat" [disabled]="!loginForm.valid">Sign In</button>
+                    </div>
+                    <div class="col-xs-12 text-danger">
+                        <h6> {{errorMsg}} </h6>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

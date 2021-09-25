@@ -2719,3 +2719,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     right: 16px!important;
     top: 17px!important;
 }
+#divLoading {
+    display: block;
+    position: fixed;
+    z-index: 10000;
+    background-image: url('assets/img/ajax-loader.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+}

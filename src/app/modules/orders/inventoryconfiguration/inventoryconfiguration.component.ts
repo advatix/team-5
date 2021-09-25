@@ -3,6 +3,8 @@ import { environment } from 'src/environments/environment';
 import { CommonService } from 'src/app/services/common.service';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { OrdersService } from 'src/app/services/orders.service';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inventoryconfiguration',
@@ -31,7 +33,7 @@ export class InventoryconfigurationComponent implements OnInit {
   pageSize : any;
   filterLocation : any;
   locationFlag : any = 0;
-  constructor(private fb: FormBuilder, private oredrService: OrdersService, private commonService: CommonService) { }
+  constructor(private router:Router,private fb: FormBuilder, private oredrService: OrdersService, private commonService: CommonService) { }
   ngOnInit() {
     this.commonService.setTitle('Upload Orders');
     this.uploadForm = this.fb.group({
@@ -55,12 +57,6 @@ export class InventoryconfigurationComponent implements OnInit {
         this.batchListData = data;
         if (this.batchListData.responseStatusCode == 200) {
           this.uploadList = this.batchListData.responseObject;
-          if (this.uploadList) {
-            // this.uploadList.forEach((d) => {
-            //   var index = d.createdOn.indexOf(' ', d.createdOn.indexOf(' ') + 1);
-            //   d.createdOn = d.createdOn.substr(0, index);
-            // });
-          }
           pageNumber = pageNumber + 1;
           this.config = {
             itemsPerPage: (this.pageSize == '') ? this.batchListData.responseObject.totalElements : this.pageSize,
@@ -94,8 +90,16 @@ export class InventoryconfigurationComponent implements OnInit {
       data => {
         this.uploadResponce = data;
         if (this.uploadResponce.status == "success") {
-          this.getUploadList(0);
-        
+          Swal.fire({
+            title: '',
+            text: "Order has been Uploaded successfully",
+            icon: 'success',
+            showCancelButton: false,
+            cancelButtonText: 'OK'
+          }).then((result) => {
+          //this.getUploadList(0);
+            this.router.navigate(['orders']);
+          });
         }
       },
       err => {
