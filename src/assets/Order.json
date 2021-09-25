@@ -1,0 +1,50 @@
+[
+{
+    "addressType": "Residential",
+    "orderNumber": "AK-00015",
+    "shipToName": "Sandeep Rajan",
+    "shipToAddress": "24 Walnut Hill Road, Apt 4",
+    "shipToAddress2": "",
+    "shipToCity": "Nashville",
+    "shipToCountry": "USA",
+    "shipToEmail": "",
+    "shipToMobile": "9218514140",
+    "shipToState": "TN",
+    "postalCode": "37207",
+    "accountId": "3Sprouts",
+    "companyName": "Advatix",
+    "carrier": "PB-FIRST-CLASS",
+    "serviceType": "First-Class Mail",
+    "orderItems": [
+        {
+            "sku": "8oz Bergamot",
+            "quantity": 1,
+            "price": "100"
+        }
+    ]
+},
+{
+    "addressType": "Residential",
+    "orderNumber": "AK-00016",
+    "shipToName": "Sandeep Rajan",
+    "shipToAddress": "24 Walnut Hill Road, Apt 4",
+    "shipToAddress2": "",
+    "shipToCity": "Nashville",
+    "shipToCountry": "USA",
+    "shipToEmail": "",
+    "shipToMobile": "9218514140",
+    "shipToState": "TN",
+    "postalCode": "37207",
+    "accountId": "3Sprouts",
+    "companyName": "Advatix",
+    "carrier": "PB-FIRST-CLASS",
+    "serviceType": "First-Class Mail",
+    "orderItems": [
+        {
+            "sku": "8oz Bergamot",
+            "quantity": 1,
+            "price": "100"
+        }
+    ]
+}
+]

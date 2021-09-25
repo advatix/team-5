@@ -1,0 +1,40 @@
+<section class="content-header">
+    <h1>Configuration</h1>
+    <ol class="breadcrumb">
+        <li><a routerLink="/dashboard/">Home</a></li>
+        <li><a routerLink="/configuration/">Configuration</a></li>
+        <li class="active">Add</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="box">
+        <div class="box-body">
+            <form [formGroup]="ConfigurationForm" (ngSubmit)="ConfigurationSave();">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Feed Order URL </label>
+                           <input formControlName="orderurl" class="form-control" required/>
+                              
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Feed Inventory URL </label>
+                           <input formControlName="inventoryurl" class="form-control" required/>
+                              
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center text-success" *ngIf="message">
+                        <p>{{message}}</p>
+                    </div>
+                    <div class="col-md-2">
+                        <button [disabled]="!ConfigurationForm.valid" type="submit" class="btn btn-primary"><img class="customicon" >submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
